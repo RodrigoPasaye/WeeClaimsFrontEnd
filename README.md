@@ -2,6 +2,8 @@
 
 ## DEV
 
+Navegadores recomendados Chrome o Edge
+
 ```sh
 npm install
 ```
