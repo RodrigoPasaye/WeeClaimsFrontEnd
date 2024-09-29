@@ -8,7 +8,7 @@ npm install
 
 Cambiar en el archivo .env.development la variable de entorno VITE_MAIN_SERVICE que hace referencia a la API
 
-La URL completa consta de la siguiente manera
+Ejemplo de URL completa
 
 ```
   http://localhost:5179/api/v1/Customer

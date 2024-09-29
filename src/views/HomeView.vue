@@ -224,16 +224,17 @@ export default {
         })
         .catch((error) => {
           console.error(error);
+          if (error.code === "ERR_NETWORK") {
+            this.enviarAlerta("error", "Error  de conexión");
+          }
+          if (error.response.status === 500) {
+            this.enviarAlerta("error", "Error interno del servidor");
+          }
           if (error.response.status === 400) {
             const message = error.response
               ? error.response.data[0]
               : error.response.data[0].errorMessage;
-            console.log(message);
             this.enviarAlerta("error", message);
-          } else if (error.response) {
-            this.enviarAlerta("error", "Error interno del servidor");
-          } else {
-            this.enviarAlerta("error", "Error  de conexión");
           }
         })
         .finally(() => {
